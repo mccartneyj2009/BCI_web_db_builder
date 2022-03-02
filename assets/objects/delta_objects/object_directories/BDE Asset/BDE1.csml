@@ -1,0 +1,53 @@
+<Object name="BDE1">
+<String name="Description" value=""/>
+<ObjectIdentifier name="Object_Identifier" value="bulk-data-exchange,1"/>
+<String name="Object_Name" value="BDE Asset"/>
+<Enumerated name="Object_Type" value="310"/>
+<BitString name="Status_Flags" value=""/>
+<Unsigned name="Object_Size" value="134"/>
+<BitString name="Flags" value="not-commissioned"/>
+<Boolean name="Reset" value="0"/>
+<BitString name="Exchange_Flags" value=""/>
+<Unsigned name="Tx_Frequency_Min" value="120"/>
+<Unsigned name="Tx_Frequency_Max" value="10"/>
+<Unsigned name="Tx_Max_Timer" value="10"/>
+<Unsigned name="Tx_Min_Timer" value="14161"/>
+<Unsigned name="COV_Check_Timer" value="13520"/>
+<Unsigned name="Last_Tx" value=""/>
+<Real name="Tx_COV_Increment" value="0.01"/>
+<Array name="Tx_Destinations">
+<Sequence name="1">
+<Enumerated name="port" value="all/any"/>
+<Choice name="recipient">
+<Sequence name="address">
+<Unsigned name="network-number" value="0"/>
+<OctetString name="mac-address" value=""/>
+</Sequence>
+</Choice>
+</Sequence>
+</Array>
+<Enumerated name="Tx_Station_Type" value="transmit-bcast-&amp;-cov"/>
+<Array name="Tx_Entries">
+</Array>
+<Unsigned name="Rx_Frequency_Min" value="0"/>
+<Unsigned name="Rx_Frequency_Max" value="0"/>
+<Unsigned name="Last_Rx" value=""/>
+<Real name="Rx_COV_Increment" value="0"/>
+<Array name="Rx_Sources">
+<Sequence name="1">
+<ObjectIdentifierPattern name="sourceDevice" value="*"/>
+<DateTimePattern name="timestamp" value="*-*-* * 00:00:00.00"/>
+</Sequence>
+<Sequence name="2">
+<ObjectIdentifierPattern name="sourceDevice" value="*"/>
+<DateTimePattern name="timestamp" value="*-*-* * 00:00:00.00"/>
+</Sequence>
+<Sequence name="3">
+<ObjectIdentifierPattern name="sourceDevice" value="*"/>
+<DateTimePattern name="timestamp" value="*-*-* * 00:00:00.00"/>
+</Sequence>
+</Array>
+<BitString name="Rx_Flags" value=""/>
+<Array name="Rx_Entries">
+</Array>
+</Object>

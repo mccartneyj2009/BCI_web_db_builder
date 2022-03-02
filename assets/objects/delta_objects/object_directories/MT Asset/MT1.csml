@@ -1,0 +1,146 @@
+<Object name="MT1">
+<String name="Description" value=""/>
+<ObjectIdentifier name="Object_Identifier" value="multi-trend,1"/>
+<String name="Object_Name" value="MT Asset"/>
+<Enumerated name="Object_Type" value="multi-trend-log-object"/>
+<BitString name="Status_Flags" value=""/>
+<Unsigned name="Object_Size" value="299"/>
+<BitString name="Flags" value=""/>
+<Boolean name="Reset" value="0"/>
+<Boolean name="Auto_XOrigin" value="1"/>
+<DateTimePattern name="XOrigin" value="*-*-* * *:*:*.*"/>
+<Boolean name="Auto_XExtent" value="0"/>
+<Integer name="XExtent" value="28800"/>
+<Boolean name="Auto_XInterval" value="1"/>
+<Integer name="XInterval" value="0"/>
+<Boolean name="XGrid" value="0"/>
+<Boolean name="Auto_Poll_Interval" value="0"/>
+<Integer name="Poll_Interval" value="60"/>
+<Boolean name="Show_Symbols" value="0"/>
+<Boolean name="Show_Symbol_Labels" value="0"/>
+<Array name="YAxis_List">
+<Sequence name="1">
+<Boolean name="autoOrigin" value="1"/>
+<Real name="origin" value="0"/>
+<Boolean name="autoExtent" value="1"/>
+<Real name="extent" value="0"/>
+<Boolean name="autoInterval" value="1"/>
+<Real name="interval" value="0"/>
+<Boolean name="autoPrecision" value="1"/>
+<Integer name="precision" value="1"/>
+<Boolean name="grid" value="1"/>
+<String name="label" value="Y1 Axis"/>
+</Sequence>
+<Sequence name="2">
+<Boolean name="autoOrigin" value="1"/>
+<Real name="origin" value="0"/>
+<Boolean name="autoExtent" value="1"/>
+<Real name="extent" value="0"/>
+<Boolean name="autoInterval" value="1"/>
+<Real name="interval" value="0"/>
+<Boolean name="autoPrecision" value="1"/>
+<Integer name="precision" value="1"/>
+<Boolean name="grid" value="0"/>
+<String name="label" value=""/>
+</Sequence>
+</Array>
+<Array name="Trend_Log_List">
+<Sequence name="1">
+<Sequence name="reference">
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Unsigned name="axis" value="0"/>
+<Integer name="color" value="0"/>
+<Boolean name="display" value="0"/>
+<Enumerated name="lineType" value="none"/>
+<Enumerated name="symbolType" value="none"/>
+</Sequence>
+<Sequence name="2">
+<Sequence name="reference">
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Unsigned name="axis" value="0"/>
+<Integer name="color" value="0"/>
+<Boolean name="display" value="0"/>
+<Enumerated name="lineType" value="none"/>
+<Enumerated name="symbolType" value="none"/>
+</Sequence>
+<Sequence name="3">
+<Sequence name="reference">
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Unsigned name="axis" value="0"/>
+<Integer name="color" value="0"/>
+<Boolean name="display" value="0"/>
+<Enumerated name="lineType" value="none"/>
+<Enumerated name="symbolType" value="none"/>
+</Sequence>
+<Sequence name="4">
+<Sequence name="reference">
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Unsigned name="axis" value="0"/>
+<Integer name="color" value="0"/>
+<Boolean name="display" value="0"/>
+<Enumerated name="lineType" value="none"/>
+<Enumerated name="symbolType" value="none"/>
+</Sequence>
+<Sequence name="5">
+<Sequence name="reference">
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Unsigned name="axis" value="0"/>
+<Integer name="color" value="0"/>
+<Boolean name="display" value="0"/>
+<Enumerated name="lineType" value="none"/>
+<Enumerated name="symbolType" value="none"/>
+</Sequence>
+<Sequence name="6">
+<Sequence name="reference">
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Unsigned name="axis" value="0"/>
+<Integer name="color" value="0"/>
+<Boolean name="display" value="0"/>
+<Enumerated name="lineType" value="none"/>
+<Enumerated name="symbolType" value="none"/>
+</Sequence>
+<Sequence name="7">
+<Sequence name="reference">
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Unsigned name="axis" value="0"/>
+<Integer name="color" value="0"/>
+<Boolean name="display" value="0"/>
+<Enumerated name="lineType" value="none"/>
+<Enumerated name="symbolType" value="none"/>
+</Sequence>
+<Sequence name="8">
+<Sequence name="reference">
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Unsigned name="axis" value="0"/>
+<Integer name="color" value="0"/>
+<Boolean name="display" value="0"/>
+<Enumerated name="lineType" value="none"/>
+<Enumerated name="symbolType" value="none"/>
+</Sequence>
+</Array>
+<BitString name="HAL_Flags" value="hvac"/>
+</Object>

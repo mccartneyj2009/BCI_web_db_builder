@@ -1,0 +1,32 @@
+<Object name="PG1">
+<String name="Description" value=""/>
+<String name="Description_Of_Halt" value=""/>
+<ObjectIdentifier name="Object_Identifier" value="program,1"/>
+<String name="Object_Name" value="PG Asset"/>
+<Enumerated name="Object_Type" value="program"/>
+<Boolean name="Out_Of_Service" value="0"/>
+<Enumerated name="Program_Change" value="ready"/>
+<Enumerated name="Program_State" value="running"/>
+<Enumerated name="Reason_For_Halt" value="normal"/>
+<Enumerated name="Reliability" value="no-fault-detected"/>
+<BitString name="Status_Flags" value=""/>
+<Unsigned name="Object_Size" value="131"/>
+<BitString name="Flags" value=""/>
+<Boolean name="Reset" value="0"/>
+<Unsigned name="Timeout_Count" value="0"/>
+<Unsigned name="Max_Exec_Time" value="0"/>
+<Unsigned name="Max_Allowable_Exec_Time" value="200"/>
+<Sequence name="Last_Error">
+<Unsigned name="code" value="0"/>
+<Unsigned name="line" value="0"/>
+</Sequence>
+<Unsigned name="Write_Priority" value="10"/>
+<OctetString name="Program_Data" value="7f04030020"/>
+<OctetString name="Symbol_Table" value="7f010000000000000000000100010058110000000100ffff3f000000ffff3f0000000000ffffbf01000000002a00"/>
+<OctetString name="Trace_Data" value="7f0001"/>
+<OctetString name="Expression_List" value="7f000000000000"/>
+<OctetString name="Run_Data" value="7f00000000"/>
+<Boolean name="Program_Called" value="1"/>
+<Unsigned name="Version" value="4"/>
+<Enumerated name="Manual_Override" value=""/>
+</Object>

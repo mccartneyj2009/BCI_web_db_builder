@@ -1,0 +1,74 @@
+<Object name="EV2">
+<BitString name="Acked_Transitions" value="to-offnormal;to-fault;to-normal"/>
+<Unsigned name="Notification_Class" value="5"/>
+<String name="Description" value=""/>
+<BitString name="Event_Enable" value=""/>
+<Enumerated name="Event_State" value="normal"/>
+<Enumerated name="Event_Type" value="change-of-state"/>
+<Enumerated name="Notify_Type" value="alarm"/>
+<ObjectIdentifier name="Object_Identifier" value="event-enrollment,2"/>
+<String name="Object_Name" value="EV CoS Asset"/>
+<Sequence name="Object_Property_Reference">
+<Unsigned name="deviceIdentifier" value="4194303"/>
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Enumerated name="Object_Type" value="event-enrollment"/>
+<Choice name="Event_Parameters">
+<Sequence name="change-of-state">
+<Unsigned name="time-delay" value="60"/>
+<List name="list-of-values">
+</List>
+</Sequence>
+</Choice>
+<Array name="Event_Time_Stamps">
+<Choice name="1">
+<DateTimePattern name="dateTime" value="*-*-* * *:*:*.*"/>
+</Choice>
+<Choice name="2">
+<DateTimePattern name="dateTime" value="*-*-* * *:*:*.*"/>
+</Choice>
+<Choice name="3">
+<DateTimePattern name="dateTime" value="*-*-* * *:*:*.*"/>
+</Choice>
+</Array>
+<Unsigned name="Object_Size" value="170"/>
+<BitString name="Flags" value="fault"/>
+<BitString name="Status_Flags" value="fault"/>
+<Boolean name="Reset" value="0"/>
+<Enumerated name="Pending_Event_State" value="unknown"/>
+<Sequence name="Enable_Ref">
+<Unsigned name="deviceIdentifier" value="4194303"/>
+<ObjectIdentifier name="objectIdentifier" value="*"/>
+<Enumerated name="propertyIdentifier" value="4194303"/>
+<Unsigned name="propertyArrayIndex" value="4294967295"/>
+</Sequence>
+<Boolean name="Out_Of_Service" value="0"/>
+<Choice name="Context">
+<Sequence name="change-of-state">
+<Choice name="monitoredValue">
+<Unsigned name="unsigned-value" value="65535"/>
+</Choice>
+<Choice name="previousValue">
+<Unsigned name="unsigned-value" value="65535"/>
+</Choice>
+</Sequence>
+</Choice>
+<ObjectIdentifier name="Event_Class_Ref" value="notification-class,5"/>
+<Unsigned name="Time_Delay_Timer" value=""/>
+<Array name="Event_Count">
+<Unsigned name="1" value="0"/>
+<Unsigned name="2" value="0"/>
+<Unsigned name="3" value="0"/>
+</Array>
+<Array name="Event_Message_Texts_Config">
+<String name="1" value=""/>
+<String name="2" value=""/>
+<String name="3" value=""/>
+</Array>
+<Enumerated name="Last_Off_Normal_State" value="normal"/>
+<Boolean name="Enable_Auto_Text" value="1"/>
+<Enumerated name="Manual_Override" value=""/>
+<BitString name="HAL_Flags" value="hvac"/>
+</Object>
