@@ -1,4 +1,10 @@
+import { useState } from "react";
+import AnalogInput from "./AnalogInput";
+
 function ObjectCreationForm() {
+  const [objectTypeSelected, setObjectTypeSelected] = useState({});
+  const [objectName, setObjectName] = useState("");
+  const [objectInstance, setObjectInstance] = useState("");
   const objectTypes = {
     ai: "Analog Input",
     ao: "Analog Output",
@@ -16,29 +22,51 @@ function ObjectCreationForm() {
     mv: "Multi-Variable",
     pg: "Program",
   };
+
   return (
-    <form className="flex flex-col p-10 w-1/2 bg-stone-200">
-      <label htmlFor="object-type">Object Type:</label>
-      <select
-        id="object-type"
-        onChange={(e) => {
-          console.log(Object.keys(objectTypes)[e.target.value]);
+    <form className="flex flex-col p-10 w-1/2 bg-stone-200 items-center">
+      <div className="flex flex-col">
+        <label htmlFor="object-type">Object Type:</label>
+        <select
+          id="object-type"
+          onChange={(e) => {
+            console.log(Object.keys(objectTypes)[e.target.value]);
+            setObjectTypeSelected(Object.keys(objectTypes)[e.target.value]);
+          }}
+          defaultValue=""
+          className="p-1"
+        >
+          <option value="" disabled>
+            Select Object Type
+          </option>
+          {Object.keys(objectTypes).map((objectType, index) => {
+            return (
+              <option key={index} value={index}>
+                {objectTypes[objectType]}
+              </option>
+            );
+          })}
+        </select>
+        {objectTypeSelected === "ai" ? (
+          <AnalogInput
+            objectName={objectName}
+            objectInstance={objectInstance}
+            setObjectName={setObjectName}
+            setObjectInstance={setObjectInstance}
+          />
+        ) : null}
+      </div>
+
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          if (objectInstance === "") {
+          }
         }}
-        defaultValue=""
+        className="bg-stone-400 mt-10 rounded-lg w-1/2 h-10 text-white shadow-md shadow-black hover:bg-stone-500 hover:shadow-stone-700 hover:shadow-xl hover:font-bold active:ring active:ring-black active:bg-white active:text-black active:shadow-lg active:shadow-stone-500"
       >
-        <option value="" disabled>
-          Select Object Type
-        </option>
-        {Object.keys(objectTypes).map((objectType, index) => {
-          return (
-            <option key={index} value={index}>
-              {objectTypes[objectType]}
-            </option>
-          );
-        })}
-      </select>
-      <label htmlFor="object-name">Object Name:</label>
-      <input id="object-name" type="text" />
+        Add to List
+      </button>
     </form>
   );
 }

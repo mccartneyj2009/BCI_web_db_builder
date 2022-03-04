@@ -36,7 +36,6 @@ Objects will be placed in `./assets/objects` directory.
 
 ## Required Fields for AI csml
 
-- Object Type (ex. `<Enumerated name="Object_Type" value="analog-input"/>`)
 - Object Name (ex. `<Object name="AI1">`)
 - Object Identifier (ex. `<ObjectIdentifier name="Object_Identifier" value="analog-input,1"/>`)
 - String Name (ex. `<String name="Object_Name" value="AI Asset"/>`)
@@ -51,3 +50,13 @@ Objects will be placed in `./assets/objects` directory.
 - Object Type (ex. 'Analog Input')
 - Object Name (ex. 'Outside Air Temperature')
 - Object Instance (ex. '1')
+
+## How to build the Object
+
+- If "Analog Input" is selected, show the following fields:
+  1.  Object Name - Will be the point name seen in the eWEB main window. It will be the value that fills in the the "Object Identifier" section in the csml.
+  2.  Object Instance - This will be a number value only with no prefixed I/O type.
+  3.  After gather the above information, the csml will be edited as follows with the values collected from the user:
+      - `<Object name=${<Object Type Key>}${<Object Instance>}>`
+      - `<ObjectIdentifier name="Object_Identifier" value=${<Object Type>},${<Object Instance>}`; will end up with the string of ->`value="analog-input,1"/>`
+      - `<String name="Object_Name" value=${<Object Name>}/>`
