@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AnalogInput from "./object_components/AnalogInput";
 
-function ObjectCreationForm() {
+function ObjectCreationForm({ setPointsList }) {
     const [objectTypeSelected, setObjectTypeSelected] = useState({});
     const [objectName, setObjectName] = useState("");
     const [objectInstance, setObjectInstance] = useState("");
@@ -24,7 +24,18 @@ function ObjectCreationForm() {
     };
 
     return (
-        <form className="flex flex-col m-3 p-10 w-1/4 rounded-lg bg-stone-200 items-center">
+        <form
+            onSubmit={(e) => {
+                e.preventDefault();
+                console.log(objectTypeSelected, objectName, objectInstance);
+                setPointsList({
+                    objectTypeSelected,
+                    objectName,
+                    objectInstance,
+                });
+            }}
+            className="flex flex-col m-3 p-10 w-1/4 rounded-lg bg-stone-200 items-center"
+        >
             <div className="flex flex-col">
                 <label htmlFor="object-type">Object Type:</label>
                 <select
@@ -59,14 +70,7 @@ function ObjectCreationForm() {
                 ) : null}
             </div>
 
-            <button
-                onClick={(e) => {
-                    e.preventDefault();
-                    if (objectInstance === "") {
-                    }
-                }}
-                className="bg-stone-400 mt-10 rounded-lg w-1/2 h-10 text-white shadow-md shadow-black hover:bg-stone-500 hover:shadow-stone-700 hover:shadow-xl hover:font-bold active:ring active:ring-black active:bg-white active:text-black active:shadow-lg active:shadow-stone-500"
-            >
+            <button className="bg-stone-400 mt-10 rounded-lg w-1/2 h-10 text-white shadow-md shadow-black hover:bg-stone-500 hover:shadow-stone-700 hover:shadow-xl hover:font-bold active:ring active:ring-black active:bg-white active:text-black active:shadow-lg active:shadow-stone-500">
                 Add to List
             </button>
         </form>

@@ -1,11 +1,11 @@
 import ObjectCreationForm from "./ObjectCreationForm";
 import PointsList from "./PointsList";
 
-function Home() {
+function Home({ pointsList, setPointsList }) {
     return (
         <section className="flex grow">
-            <ObjectCreationForm />
-            <PointsList />
+            <ObjectCreationForm setPointsList={setPointsList} />
+            <PointsList pointsList={pointsList} />
         </section>
     );
 }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import headerImage from "../assets/images/BCI_header.jpg";
 
 function Header() {
