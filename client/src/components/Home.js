@@ -1,11 +1,13 @@
 import ObjectCreationForm from "./ObjectCreationForm";
+import PointsList from "./PointsList";
 
 function Home() {
-  return (
-    <section className="mb-auto h-10">
-      <ObjectCreationForm />
-    </section>
-  );
+    return (
+        <section className="flex grow">
+            <ObjectCreationForm />
+            <PointsList />
+        </section>
+    );
 }
 
 export default Home;
