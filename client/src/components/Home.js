@@ -1,11 +1,14 @@
-import ObjectCreationForm from "./ObjectCreationForm";
-import PointsList from "./PointsList";
+import ObjectCreationForm from "./object_components/ObjectCreationForm";
+import PointsListTable from "./object_components/PointsListTable";
 
 function Home({ pointsList, setPointsList }) {
     return (
         <section className="flex grow">
-            <ObjectCreationForm setPointsList={setPointsList} />
-            <PointsList pointsList={pointsList} />
+            <ObjectCreationForm
+                pointsList={pointsList}
+                setPointsList={setPointsList}
+            />
+            <PointsListTable pointsList={pointsList} />
         </section>
     );
 }

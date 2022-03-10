@@ -1,4 +1,8 @@
-function PointsList({ pointsList }) {
+import { useEffect } from "react";
+
+function PointsListTable({ pointsList }) {
+    useEffect(() => {}, []);
+
     return (
         <div id="pl-table" className="p-2 w-1/2 overflow-y-scroll">
             <table>
@@ -12,10 +16,12 @@ function PointsList({ pointsList }) {
                 <tbody>
                     {pointsList.map((point) => {
                         return (
-                            <tr>
-                                <td>{point}</td>
-                                <td>{point}</td>
-                                <td>{point}</td>
+                            <tr key={point.objectInstance}>
+                                <td>
+                                    {point.objectTypeSelected.toUpperCase()}
+                                </td>
+                                <td>{point.objectName}</td>
+                                <td>{point.objectInstance}</td>
                             </tr>
                         );
                     })}
@@ -25,4 +31,4 @@ function PointsList({ pointsList }) {
     );
 }
 
-export default PointsList;
+export default PointsListTable;

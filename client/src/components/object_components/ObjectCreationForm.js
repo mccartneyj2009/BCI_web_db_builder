@@ -1,10 +1,11 @@
 import { useState } from "react";
-import AnalogInput from "./object_components/AnalogInput";
+import AnalogInput from "./AnalogInput";
 
-function ObjectCreationForm({ setPointsList }) {
-    const [objectTypeSelected, setObjectTypeSelected] = useState({});
+function ObjectCreationForm({ pointsList, setPointsList }) {
+    const [objectTypeSelected, setObjectTypeSelected] = useState("");
     const [objectName, setObjectName] = useState("");
     const [objectInstance, setObjectInstance] = useState("");
+    const [duplicatePoint, setDuplicatePoint] = useState(false);
     const objectTypes = {
         ai: "Analog Input",
         ao: "Analog Output",
@@ -22,17 +23,44 @@ function ObjectCreationForm({ setPointsList }) {
         mv: "Multi-Variable",
         pg: "Program",
     };
+    const pointsArray = [...pointsList];
+
+    function handleDuplicatePoint(pointObj) {
+        pointsArray.forEach((point) => {
+            console.log(
+                `duplicate point: ${point.objectInstance === objectInstance}\n`
+            );
+            // if (point.objectInstance === pointObj.objectInstance) {
+            //     return point.objectInstance === pointObj.objectInstance;
+            // }
+        });
+        // console.log(point, objectInstance);
+        // if (duplicatePoint) return;
+        // setDuplicatePoint(point.objectInstance === objectInstance);
+        // handleSetPointsList();
+        // setObjectTypeSelected("");
+        // setObjectName("");
+        // setObjectInstance("");
+    }
+
+    function handleSetPointsList() {
+        const pointObj = { objectTypeSelected, objectName, objectInstance };
+        const duplicate = handleDuplicatePoint(pointObj);
+        if (duplicate) {
+            console.log("duplicate point");
+            return;
+        }
+        pointsArray.push(pointObj);
+        setPointsList(pointsArray);
+    }
 
     return (
         <form
             onSubmit={(e) => {
                 e.preventDefault();
-                console.log(objectTypeSelected, objectName, objectInstance);
-                setPointsList({
-                    objectTypeSelected,
-                    objectName,
-                    objectInstance,
-                });
+                //check for duplicate pointInstances in the pointsList Array.
+                handleSetPointsList();
+                handleDuplicatePoint();
             }}
             className="flex flex-col m-3 p-10 w-1/4 rounded-lg bg-stone-200 items-center"
         >
@@ -41,12 +69,12 @@ function ObjectCreationForm({ setPointsList }) {
                 <select
                     id="object-type"
                     onChange={(e) => {
-                        console.log(Object.keys(objectTypes)[e.target.value]);
                         setObjectTypeSelected(
                             Object.keys(objectTypes)[e.target.value]
                         );
                     }}
-                    defaultValue=""
+                    // defaultValue=""
+                    value={objectTypeSelected}
                     className="p-1"
                 >
                     <option value="" disabled>
@@ -66,6 +94,7 @@ function ObjectCreationForm({ setPointsList }) {
                         objectInstance={objectInstance}
                         setObjectName={setObjectName}
                         setObjectInstance={setObjectInstance}
+                        handleDuplicatePoint={handleDuplicatePoint}
                     />
                 ) : null}
             </div>
